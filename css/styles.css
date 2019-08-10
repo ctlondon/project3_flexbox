@@ -1,0 +1,341 @@
+/* ================================= 
+  Base Element Styles
+==================================== */
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color:rgb(48, 48, 48);
+}
+
+h1, h2 {
+  font-family: 'Merriweather', serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1em;
+  text-transform: uppercase;
+  color: white;
+}
+
+p {
+  text-align: center;
+  font-size: 1em;
+  line-height: 1.5em;
+  color: #8a97a0;
+  padding: 1em;
+  margin: 0;
+}
+
+small {
+  font-family: 'Merriweather', serif;
+  font-size: .9em;
+  font-style: italic;
+}
+
+header {
+  background-color: rgb(48, 48, 48);
+  height: 100px;
+  margin: 0 0 .75em 0;
+  padding: 0;
+}
+
+/* ----- 
+End Base Element Styles 
+----- */
+
+/* ================================= 
+  Base Layout Styles
+==================================== */
+
+/* ---- Layout Containers ---- */
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.item {
+  align-self:  center;
+}
+
+.form {
+  margin: auto;
+  margin-bottom: 1em;
+  width: 95%;
+  background-color: white;
+  padding: 2em;
+  border-radius: 5px;
+}
+
+/* ---- Page Elements ---- */
+
+.title {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.t-border{
+  border-top: solid 2px rgb(48, 48, 48);
+}
+
+.b-border {
+  border-bottom: solid 5px rgb(48, 48, 48);
+}
+
+.b-margin {
+  margin-bottom: .3em;
+}
+
+.b-padding {
+  padding-bottom: 3em;
+}
+
+.t-margin {
+  margin-top: 1.5em;
+}
+
+.btn {
+  outline: none;
+  border: none;
+  display: block;
+  width: 100%;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: all 1s;
+  padding: 1em;
+  font-size: 1.2em;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  cursor: pointer;
+  transition: all 1s;
+  transform: scale(1.025); 
+}
+
+.warning {
+  background-color: coral;
+}
+
+.default {
+  background-color: #0ABFAD;
+}
+
+
+
+/* ---- Form Elements ---- */
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  line-height: 2em;
+}
+
+label.light {
+  display:  inline-block;
+}
+
+fieldset {
+  margin-bottom: 30px;
+  border: none;
+  padding: 0;
+}
+
+legend {
+  font-family: 'Merriweather', serif;
+  font-size: 1.25em;
+  padding: 2em 0 2em 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+textarea,
+select {
+  outline: none;
+  color: rgb(48, 48, 48);
+  height: auto;
+  font-size: 1em;
+  padding: 15px;
+  width: 100%;
+  background-color: #e8eeef;
+  border: none;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  transition: all 1s;
+}
+
+input#zip {
+  width: 50%;
+}
+
+select {
+  height: 50px;
+  cursor: pointer;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 0 15px 5px 0;
+  cursor: pointer;
+}
+
+input::placeholder {
+  font-style: italic;
+  text-align: right;
+  color: #8a97a0;
+  padding-right: 10px;
+}
+
+textarea::placeholder { 
+  font-style: italic;
+  color: #8a97a0;
+}
+
+/* input[id^=js],
+input[id^=plain] {
+  margin-bottom: 30px;
+} */
+
+input[type="checkbox"]:checked + label, 
+input[type="radio"]:checked + label {
+  font-weight: 700;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border: solid 1px rgb(48, 48, 48);
+  box-shadow: 0px 0.2em 2.5em #c4c4c4;
+  transform: scale(1.025); 
+  transition: all 1s;
+}
+
+.form-radio,
+.form-checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  position: relative;
+  background-color: #e8eeef;
+  color: white;
+  top: 13px;
+  height: 30px;
+  width: 30px;
+  border: 0;
+  cursor: pointer;     
+  margin-right: 7px;
+  outline: none;
+}
+
+.form-radio {
+  border-radius: 50px;
+}
+
+.form-checkbox {
+  border-radius: 3px;
+}
+
+.form-radio:checked::before,
+.form-checkbox:checked::before {
+  position: absolute;
+  font: 13px/1 'Open Sans', sans-serif;
+  left: 11px;
+  top: 7px;
+  content: '\02143';
+  transform: rotate(40deg);
+}
+
+.form-radio:hover,
+.form-checkbox:hover {
+  background-color: #8a97a0;
+}
+
+.form-radio:checked,
+.form-checkbox:checked {
+  background-color: #0ABFAD;
+}
+
+.form-radio:focus,
+.form-checkbox:focus {
+  outline: none;
+  transform: none;
+  border: none;
+}
+
+/* ----- 
+End Base Layout Styles 
+----- */
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media (min-width: 768px) {
+
+  header {
+    margin: 0 0 5em 0;
+  }
+
+  .form {
+    margin: auto;
+    margin-bottom: 1em;
+    width: 60%;
+    max-width: 700px;
+  }
+
+  label {
+    display: inline-block;
+    margin-right: 15px;
+    width: 30%;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  select {
+    width: 65%;
+  }
+
+  input#zip {
+    width: 30%;
+  }
+
+  .full {
+    width: 100%;
+  }
+
+}
+
+/* ----- 
+Media Queries 
+----- */
+
+/* ================================= 
+  Float Clearfix
+==================================== */
+
+.clearfix::after {
+    content: " ";
+    display: table;
+    clear: both;
+}
